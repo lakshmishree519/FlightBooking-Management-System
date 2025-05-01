@@ -1,0 +1,47 @@
+<div class="container">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button routerLink="/register">Register</button>
+        <button routerLink="/login" *ngIf="!service.isLoggedIn()">Login</button>
+        <button routerLink="/add-flight" *ngIf="service.isAdmin()">Add Flight</button>
+        <button routerLink="/flight-list">Flight List</button>
+        <button routerLink="/manage-booking">Manage-Booking</button>
+        <button routerLink="/book-form" *ngIf="service.isUser()">Flight Booking</button>
+        <button (click)="logout()" *ngIf="service.isLoggedIn()">Logout</button>
+    </nav> -->
+    
+    
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" routerLink="/register" *ngIf="!service.isLoggedIn()">Register</a>
+          </li>
+        <li class="nav-item active">
+            <a class="nav-link" routerLink="/login" *ngIf="!service.isLoggedIn()">Login</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/add-flight" *ngIf="service.isAdmin()">Add Flight</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/flight-list">Flight List</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/booking-list" *ngIf="!service.isLoggedIn()">Booking List</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="" (click)="logout()" *ngIf="service.isLoggedIn()">Logout</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+  <strong><h2>Flight Booker</h2></strong>
+  FlightBooker is digital platform.
+  <hr>
+ 
+  <router-outlet></router-outlet>
+</div>
+ 

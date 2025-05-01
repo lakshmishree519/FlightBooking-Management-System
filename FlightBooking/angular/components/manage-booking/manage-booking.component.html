@@ -1,0 +1,39 @@
+<h2>Booking Form</h2>
+<form [formGroup]="bookingForm" (ngSubmit)="addNewBooking()">
+    <label for="flightNumber">FlightNumber:</label><br>
+    <input type="text" name="flightNumber" formControlName="flightNumber" id="flightNumber" class="form-control" disabled><br>
+    
+
+    <label for="bookingDate">Booking Date:</label><br>
+    <input type="date" name="bookingDate" formControlName="bookingDate" id="bookingDate" class="form-control"><br>
+    
+
+    <label for="numberOfPassengers">Number Of Passengers:</label><br>
+    <input type="number" name="numberOfPassengers" formControlName="numberOfPassengers" id="numberOfPassengers" class="form-control"><br>
+
+    <button type="submit">Add Booking</button>
+</form>
+
+<h2>Booking List</h2>
+<table>
+    <tr>
+        <th>Booking Id</th>
+        <th>Flight Id</th>
+        <th>User Id</th>
+        <th>Booking Date</th>
+        <th>Number Of Passengers</th>
+        <th>Status</th>
+    </tr>
+    <tr *ngFor="let booking of bookings">
+        <td>{{booking.bookingId}}</td>
+        <td>{{booking.flightId}}</td>
+        <td>{{booking.userId}}</td>
+        <td>{{booking.bookingDate}}</td>
+        <td>{{booking.numberOfPassengers}}</td>
+        <td>{{booking.status}}</td>
+        <td>
+            <button>Approve</button><br>
+            <button>Reject</button>
+        </td>
+    </tr>
+</table>

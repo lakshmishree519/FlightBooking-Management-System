@@ -1,0 +1,34 @@
+<h2>Flight List</h2><br>
+Search Source : <input type="text" [(ngModel)]="searchFieldSrc">
+Search Destination : <input type="text" [(ngModel)]="searchFieldDest">
+<button (click)="searchFlight()">Search</button>
+<table class="table table-hover">
+    <thead>
+        <tr class="table-danger">
+        <th scope="col">Flight Number</th>
+        <th scope="col">Airline</th>
+        <th scope="col">Departure Location</th>
+        <th scope="col">Arrival Location</th>
+        <th scope="col">Departure Time</th>
+        <th scope="col">Arrival Time</th>
+        <th scope="col">Price</th>
+        <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let flight of flights" >
+        <td>{{flight.flightNumber}}</td>
+        <td>{{flight.airline}}</td>
+        <td>{{flight.departureLocation}}</td>
+        <td>{{flight.arrivalLocation}}</td>
+        <td>{{flight.departureTime |uppercase}}</td>
+        <td>{{flight.arrivalTime|uppercase}}</td>
+        <td>{{flight.price|currency:"INR"}}</td>
+        <td>
+            <button (click)="updateFlight(flight.flightId)"  *ngIf="utilityService.isAdmin()">Update</button><br>
+            <button (click)="deleteFlight(flight.flightId)" *ngIf="utilityService.isAdmin()">Delete</button>
+            <button (click)="bookFlight(flight.flightId)" *ngIf="utilityService.isUser()">Booking</button>
+        </td>
+    </tr>
+</tbody>
+</table>

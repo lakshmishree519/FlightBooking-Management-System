@@ -1,0 +1,34 @@
+<form [formGroup]="flightForm" (ngSubmit)="addNewFlight()" class="form-group">
+    
+    <label for="airline">Airline:</label><br>
+    <input type="text" name="airline" formControlName="airline" id="airline" class="form-control"><br>
+    <div *ngIf="flightForm.controls.airline?.invalid && (flightForm.controls.airline?.touched || flightForm.controls.airline?.dirty)" class="text-danger">Please Enter a valid airline</div>
+
+    <label for="departureLocation">Departure Location:</label><br>
+    <input type="text" name="departureLocation" formControlName="departureLocation" id="departureLocation" class="form-control"><br>
+    
+
+    <label for="arrivalLocation">Arrival Location:</label><br>
+    <input type="text" name="arrivalLocation" formControlName="arrivalLocation" id="arrivalLocation" class="form-control"><br>
+    
+
+    <label for="departureTime">Departure Time:</label><br>
+    <input type="text" name="departureTime" formControlName="departureTime" id="departureTime" class="form-control"><br>
+    
+
+    <label for="arrivalTime">Arrival Time:</label><br>
+    <input type="text" name="arrivalTime" formControlName="arrivalTime" id="arrivalTime" class="form-control"><br>
+    
+
+    <label for="flightNumber">Flight Number:</label><br>
+    <input type="text" name="flightNumber" formControlName="flightNumber" id="flightNumber" class="form-control"><br>
+    
+
+    <label for="price">Price:</label><br>
+    <input type="number" name="price" formControlName="price" id="price" class="form-control"><br>
+    
+    <label for="totalSeats">Total Seats:</label><br>
+    <input type="number" name="totalSeats" formControlName="totalSeats" id="totalSeats" class="form-control"><br>
+
+    <button type="submit">Submit</button>
+</form>

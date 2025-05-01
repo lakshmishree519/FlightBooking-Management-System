@@ -1,0 +1,17 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form-group">
+    Email:<input type="text" name="email" formControlName="email" class="form-control"><br>
+    Username:<input type="text" id="username" name="username" formControlName="username" class="form-control">
+    <div *ngIf="registerForm.controls.username.errors.required && registerForm.controls.username.dirty" class="error-message">
+        Username is required
+    </div>
+    Password:<input type="password" id="password" name="password" formControlName="password" class="form-control">
+    <div *ngIf="registerForm.controls.password.errors.required && registerForm.controls.password.dirty" class="error-message" >
+        Password is required
+    </div>
+    MobileNumber:<input type="text" name="mobileNumber" formControlName="mobileNumber" class="form-control"><br>
+    User Role:<select name="userRole" formControlName="userRole" class="form-select">
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+    </select><br>
+    <button type="submit"  class="btn btn-success">Register User</button>
+</form>

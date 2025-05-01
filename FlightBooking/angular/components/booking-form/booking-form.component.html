@@ -1,0 +1,9 @@
+<form [formGroup]="bookingForm" (ngSubmit)="addNewBooking()">
+    BookingId : <input type="number" id="bookingId" name="bookingId" formControlName="bookingId"><br>
+    BookingDate : <input type="date" id="bookingDate" name="bookingDate" formControlName="bookingDate"><br>
+    Number Of Passengers : <input type="number" id="numberOfPassengers" name="numberOfPassengers" formControlName="numberOfPassengers"><br>
+    Status : <input type="text" id="status" name="status" formControlName="status"><br>
+    FlightId : <input type="number" id="flightId" name="flightId" formControlName="flightId"><br>
+    UserId : <input type="number" id="userId" name="userId" formControlName="userId"><br>
+    <button type="submit" [disabled]="bookingForm.invalid">Submit Booking</button>
+</form>
